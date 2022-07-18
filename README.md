@@ -69,3 +69,16 @@ fig.update(layout_showlegend=False)
 fig.show()
 
 ```
+
+
+```
+fig.update_layout(legend=dict(
+    orientation="h",
+    yanchor="bottom",
+    y=1.02,
+    xanchor="right",
+    x=1
+))
+
+
+```
