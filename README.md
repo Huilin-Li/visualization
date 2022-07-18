@@ -43,3 +43,29 @@ fig.update_layout(
 
 fig.show()
 ```
+
+```
+data = pd.read_excel('./doc/UPW_temperature_instable/UPW_module_PF_XT_1900I_1950I_2022-04-01_2022-07-01.xlsx')
+non_nan_data = data.dropna()
+
+x_mean = non_nan_data['mean'].to_numpy()
+x_sigma = non_nan_data['sigma'].to_numpy()
+x_max = non_nan_data['max'].to_numpy()
+
+# Group data together
+hist_data = [x_mean]
+
+group_labels = ['mean']
+
+fig = ff.create_distplot(
+    hist_data, group_labels, bin_size=[.001], show_rug=False)
+
+fig.update_layout(
+    xaxis_title="mean",
+    autosize=False,
+    width=450,
+    height=450)
+fig.update(layout_showlegend=False)
+fig.show()
+
+```
