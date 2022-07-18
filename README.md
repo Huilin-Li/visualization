@@ -11,3 +11,16 @@
                 dashboard.write(inner_html)
             dashboard.write("</body></html>" + "\n")
 ```
+
+
+```
+
+fig_test = go.Figure()
+fig_test.add_trace(go.Scatter(x=test_plot_df['datetime'], y=test_plot_df['raw'],
+                    mode='lines',
+                    name='test raw data points'))
+fig_test.add_trace(go.Scatter(x=test_plot_df['datetime'], y=test_plot_df['left'],
+                    mode='lines',
+                    name='test left data points'))
+fig_test.show()
+```
